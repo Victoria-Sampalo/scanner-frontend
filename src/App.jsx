@@ -7,6 +7,8 @@ import UserSection from './pages/dashboard/UserSection';
 import AdminSection from './pages/dashboard/AdminSection';
 import NotFound from './pages/dashboard/NotFound';
 
+import Register from './pages/auth/Register';
+
 function App() {
   return (
     <Router>
@@ -28,6 +30,8 @@ function App() {
           <Route path="change-password" element={<p>Aquí irá cambiar contraseña</p>} />
           <Route path="admin/users" element={<AdminSection />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/register" element={<Register />} />
+
         </Route>
       </Routes>
     </Router>
