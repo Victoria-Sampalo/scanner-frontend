@@ -13,8 +13,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Ruta pública de login */}
+        {/* Rutas públicas */}
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Rutas protegidas bajo /dashboard */}
         <Route
@@ -25,14 +26,14 @@ function App() {
             </PrivateRoute>
           }
         >
-          {/* Rutas hijas dentro del dashboard */}
           <Route path="profile" element={<UserSection />} />
           <Route path="change-password" element={<p>Aquí irá cambiar contraseña</p>} />
           <Route path="admin/users" element={<AdminSection />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/register" element={<Register />} />
-
         </Route>
+
+        {/* Fallback para rutas no encontradas fuera de dashboard */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
