@@ -14,6 +14,12 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+   console.log("TOKEN:", token);
+
+    if (!token) {
+    return <p>Token de invitación inválido o ausente.</p>;
+  }
+
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
